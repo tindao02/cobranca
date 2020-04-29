@@ -22,7 +22,7 @@ public class Titulo
 	private String descricao;
 	
 	@Temporal(TemporalType.DATE)
-	private Date dataVencimanto;
+	private Date dataVencimento;
 	
 	private BigDecimal valor;
 	
@@ -41,11 +41,11 @@ public class Titulo
 	public void setDescricao(String descricao) {
 		this.descricao = descricao;
 	}
-	public Date getDataVencimanto() {
-		return dataVencimanto;
+	public Date getDataVencimento() {
+		return dataVencimento;
 	}
-	public void setDataVencimanto(Date dataVencimanto) {
-		this.dataVencimanto = dataVencimanto;
+	public void setDataVencimento(Date dataVencimento) {
+		this.dataVencimento = dataVencimento;
 	}
 	public BigDecimal getValor() {
 		return valor;
