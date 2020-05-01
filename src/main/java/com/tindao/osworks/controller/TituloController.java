@@ -1,7 +1,11 @@
 package com.tindao.osworks.controller;
 
+import java.util.Arrays;
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
@@ -25,9 +29,6 @@ public class TituloController
 	public ModelAndView novo()
 	{
 		ModelAndView mv = new ModelAndView("CadastroTitulo"); //retorma o nome da página que será carregada
-		
-		mv.addObject("todosStatusTitulo", StatusTitulo.values());
-		
 		return (mv); 
 	}
 	
@@ -43,5 +44,11 @@ public class TituloController
 		mv.addObject("mensagem", "Título salvo com sucesso!");
 		
 		return (mv);
+	}
+	
+	@ModelAttribute("todosStatusTitulo")
+	public List<StatusTitulo> todosStatusTitulo()
+	{
+		return(Arrays.asList(StatusTitulo.values()));
 	}
 }
