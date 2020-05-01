@@ -6,6 +6,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
 
+import com.tindao.osworks.model.StatusTitulo;
 import com.tindao.osworks.model.Titulo;
 import com.tindao.osworks.repository.Titulos;
 
@@ -21,9 +22,13 @@ public class TituloController
 	 * Método para chamar a página web
 	 */
 	@RequestMapping("/novo")
-	public String novo()
+	public ModelAndView novo()
 	{
-		return ("CadastroTitulo"); //retorma o nome da página que será carregada
+		ModelAndView mv = new ModelAndView("CadastroTitulo"); //retorma o nome da página que será carregada
+		
+		mv.addObject("todosStatusTitulo", StatusTitulo.values());
+		
+		return (mv); 
 	}
 	
 	/*
